@@ -5,6 +5,7 @@ import {Squash as Hamburger} from "hamburger-react"
 // A vérifier plus tard, la communication entre components et pages en React
 
 export const Header = () => {
+  
   const [hamburger, setHamburger] = useState(false)
 
   return (
