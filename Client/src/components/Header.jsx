@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
 import {Squash as Hamburger} from "hamburger-react"
 
 // La nav : les types de tartes avec un link pour y amener
+// A vérifier plus tard, la communication entre components et pages en React
 
 export const Header = () => {
   const [hamburger, setHamburger] = useState(false)
@@ -15,11 +15,11 @@ export const Header = () => {
       </div>
 
       <nav className='hidden flex-row justify-around mt-0 sm:flex'>
-        <Link to={"/"}>Pizzas</Link>
-        <Link to={"/"}>Quiches</Link>
-        <Link to={"/"}>Tielles</Link>
-        <Link to={"/"}>Flammekueches</Link>
-        <Link to={"/"}>Desserts</Link>     
+          <a href='#Pizzas'>Pizzas</a>
+          <a href='#Quiches'>Quiches</a>
+          <a href='#Tielles'>Tielles</a>
+          <a href='#Flammekueches'>Flammekueches</a>
+          <a href='#Dessert'>Dessert</a>     
       </nav>
 
       <h2 className='flex m-3 sm:hidden' onClick={()=> setHamburger(!hamburger)}>
@@ -30,11 +30,11 @@ export const Header = () => {
         <nav className='flex flex-col items-start justify-start
         border-spacing-1 ml-3.5 absolute border-2 border-black
         opacity-100 sm:hidden'>
-          <Link to={"/"}>Pizzas</Link>
-          <Link to={"/"}>Quiches</Link>
-          <Link to={"/"}>Tielles</Link>
-          <Link to={"/"}>Flammekueches</Link>
-          <Link to={"/"}>Desserts</Link> 
+          <a href='#Pizzas'>Pizzas</a>
+          <a href='#Quiches'>Quiches</a>
+          <a href='#Tielles'>Tielles</a>
+          <a href='#Flammekueches'>Flammekueches</a>
+          <a href='#Dessert'>Dessert</a>
         </nav>
       ) :""}
     </div>
