@@ -1,9 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { TarteCard } from '../components/TarteCard'
 import { isEmpty } from '../utils'
-// Section pour chaque type de tartes
-// Filtrer donc selon le champ "typeDeTarte"
-// Carrousel
+//Type de tartes, pour l'instant, quiches, pizzas, tielles
 
 export const Home = () => {
 
@@ -24,6 +23,7 @@ export const Home = () => {
     setcarrouselImage(carrouselImage - 1)
   }
 
+  const quiches = tartes.filter(tarte => tarte.typeDeTarte === "Quiches")
 
   return (
     <div>
@@ -36,6 +36,14 @@ export const Home = () => {
           <button onClick={carrouselPlus()}>suivant</button>
         </>    
       })}
+
+      <section className='flex flex-row'>
+        {quiches.map((tarte) => {
+          <>
+            <TarteCard tarteProps={tarte} key={tarte._id}/>
+          </>
+        })}
+      </section>
       </div>
     </div>
   )
