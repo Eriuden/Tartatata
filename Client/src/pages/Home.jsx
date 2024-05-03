@@ -24,6 +24,8 @@ export const Home = () => {
   }
 
   const quiches = tartes.filter(tarte => tarte.typeDeTarte === "Quiches")
+  const pizzas = tartes.filter(tarte => tarte.typeDeTarte === "Pizzas")
+  const tielles = tartes.filter(tarte => tarte.typeDeTarte === "Tielles")
 
   return (
     <div>
@@ -36,6 +38,7 @@ export const Home = () => {
           <button onClick={carrouselPlus()}>suivant</button>
         </>    
       })}
+    </div>
 
       <section className='flex flex-row'>
         {quiches.map((tarte) => {
@@ -44,7 +47,23 @@ export const Home = () => {
           </>
         })}
       </section>
-      </div>
+
+      <section className='flex flex-row'>
+        {pizzas.map((tarte) => {
+          <>
+            <TarteCard tarteProps={tarte} key={tarte._id}/>
+          </>
+        })}
+      </section>
+
+      <section className='flex flex-row'>
+        {tielles.map((tarte) => {
+          <>
+            <TarteCard tarteProps={tarte} key={tarte._id}/>
+          </>
+        })}
+      </section>
+
     </div>
   )
 }
