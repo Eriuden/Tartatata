@@ -7,3 +7,5 @@ router.get("/", tarteController.readTarte)
 router.post("/", upload.single("file"), tarteController.createTarte)
 router.put("/:id", tarteController.updateTarte)
 router.delete("/:id", tarteController.deleteTarte)
+
+module.exports = router
