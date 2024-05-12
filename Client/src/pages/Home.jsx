@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { TarteCard } from '../components/TarteCard'
 import { isEmpty } from '../utils'
@@ -23,10 +24,6 @@ export const Home = () => {
     setcarrouselImage(carrouselImage - 1)
   }
 
-  const quiches = tartes.filter(tarte => tarte.typeDeTarte === "Quiches")
-  const pizzas = tartes.filter(tarte => tarte.typeDeTarte === "Pizzas")
-  const tielles = tartes.filter(tarte => tarte.typeDeTarte === "Tielles")
-
   return (
     <div>
       <div>{isEmpty((tartes[0])) &&
@@ -41,27 +38,36 @@ export const Home = () => {
     </div>
 
       <section className='flex flex-row'>
-        {quiches.map((tarte) => {
-          <>
-            <TarteCard tarteProps={tarte} key={tarte._id}/>
-          </>
-        })}
+
+        { tartes.filter(tarte => tarte.typeDeTarte === "Quiches")
+          .map((tarte) => {
+            <>
+              <TarteCard tarteProps={tarte} key={tarte._id}/>
+            </>
+          })
+        }
       </section>
 
       <section className='flex flex-row'>
-        {pizzas.map((tarte) => {
-          <>
-            <TarteCard tarteProps={tarte} key={tarte._id}/>
-          </>
-        })}
+
+        { tartes.filter(tarte => tarte.typeDeTarte === "Pizzas")
+          .map((tarte) => {
+            <>
+              <TarteCard tarteProps={tarte} key={tarte._id}/>
+            </>
+          })
+        }
       </section>
 
       <section className='flex flex-row'>
-        {tielles.map((tarte) => {
-          <>
-            <TarteCard tarteProps={tarte} key={tarte._id}/>
-          </>
-        })}
+
+        { tartes.filter(tarte => tarte.typeDeTarte === "Tielles")
+          .map((tarte) => {
+            <>
+              <TarteCard tarteProps={tarte} key={tarte._id}/>
+            </>
+          })
+        }
       </section>
 
     </div>
