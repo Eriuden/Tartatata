@@ -10,12 +10,12 @@ export const TarteCard = ({tarteProps}) => {
     <div key={tarteProps._id} className="flex flex-col">
         <div> { tarteProps._id ? (
           <>
-            <img src={tarte.picture}/>
-            <h3>{tarte.name}</h3>
-            <h3>{tarte.typeDeTarte}</h3>
-            <h3>{tarte.ingrédients}</h3>
-            <h3>{tarte.résumé}</h3>
-            <h3>{tarte.price}</h3>
+            <img src={tarteProps.picture}/>
+            <h3>{tarteProps.name}</h3>
+            <h3>{tarteProps.typeDeTarte}</h3>
+            <h3>{tarteProps.ingrédients}</h3>
+            <h3>{tarteProps.résumé}</h3>
+            <h3>{tarteProps.price}</h3>
           </> 
         ) : ""                             
         }
