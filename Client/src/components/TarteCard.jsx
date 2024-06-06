@@ -1,5 +1,4 @@
 import React from 'react'
-import { isEmpty } from '../utils'
 /*Réfléchir à un système d'admin pour les 
 fonctions de suppression et modification*/
 
